@@ -1,33 +1,50 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.config';
 const Login = () => {
+  const emailRef = useRef('');
+  const passwordRef = useRef('');
+
+  const [signInWithEmailAndPassword,user,loading,error,] = useSignInWithEmailAndPassword(auth);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+
+    signInWithEmailAndPassword(email, password);
+  }
+
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col">
         <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-100">
           <h1 className='text-4xl font-bold text-center p-6'>Login</h1>
-          <div class="card-body">
+          
+          <form onSubmit={handleSubmit} class="card-body">
             <div class="form-control">
               <label class="label">
                 <span class="label-text">Email</span>
               </label>
-              <input type="text" placeholder="email" class="input input-bordered" />
+              <input ref={emailRef} type="text" placeholder="email" class="input input-bordered" />
             </div>
+
             <div class="form-control">
               <label class="label">
                 <span class="label-text">Password</span>
               </label>
-              <input type="text" placeholder="password" class="input input-bordered" />
+              <input ref={passwordRef} type="text" placeholder="password" class="input input-bordered" />
               
             </div>
             <div>
               <p>Dont have any account <Link className='text-blue-700 underline' to='/signup'>Signup</Link> now</p>
             </div>
             <div class="form-control mt-6">
-              <button class="btn btn-primary text-white font-bold">Login</button>
+              <button type='submit' class="btn btn-primary text-white font-bold">Login</button>
             </div>
-          </div>
+          </form>
+
         </div>
       </div>
     </div>
