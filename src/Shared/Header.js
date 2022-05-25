@@ -7,6 +7,7 @@ import auth from '../firebase.config';
 const Header = () => {
   
   const [user] = useAuthState(auth);
+  console.log(user?.email);
   const handleSignOut = () =>{
     signOut(auth);
   }

@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.config';
+import useToken from '../../hooks/useToken';
 const Signup = () => {
   const emailRef = useRef('')
   const passwordRef = useRef('')
@@ -13,7 +14,14 @@ const Signup = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
+  // console.log(user || gUser);
+  
+  const [token]  = useToken(user || gUser);
 
+  if(token) {
+    console.log(token);
+    navigate('/');
+  }
   const handleRegister = async (event) => {
     event.preventDefault();
     const name = nameRef.current.value;
@@ -22,7 +30,7 @@ const Signup = () => {
     // console.log(name, email, password);
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    navigate('/');
+    // navigate('/');
   }
 
   return (
