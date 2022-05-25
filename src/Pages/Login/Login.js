@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.config';
 const Login = () => {
   const emailRef = useRef('');
   const passwordRef = useRef('');
+  const navigate = useNavigate();
 
   const [signInWithEmailAndPassword,user,loading,error,] = useSignInWithEmailAndPassword(auth);
 
@@ -14,6 +15,7 @@ const Login = () => {
     const password = passwordRef.current.value;
 
     signInWithEmailAndPassword(email, password);
+    navigate('/')
   }
 
   return (
@@ -34,7 +36,7 @@ const Login = () => {
               <label class="label">
                 <span class="label-text">Password</span>
               </label>
-              <input ref={passwordRef} type="text" placeholder="password" class="input input-bordered" />
+              <input ref={passwordRef} type="password" placeholder="password" class="input input-bordered" />
               
             </div>
             <div>
