@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.config';
 const Signup = () => {
   const emailRef = useRef('')
@@ -8,6 +8,8 @@ const Signup = () => {
   const nameRef = useRef('')
 
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const Signup = () => {
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col">
-        <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-100">
+        <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-100 p-6">
           <h1 className='text-4xl font-bold text-center p-6'>Signup</h1>
           
           <form onSubmit={handleRegister} class="card-body">
@@ -63,6 +65,10 @@ const Signup = () => {
             </div>
 
           </form>
+
+          <div class="divider">OR</div>
+
+          <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue with Google</button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.config';
 const Login = () => {
   const emailRef = useRef('');
@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [signInWithEmailAndPassword,user,loading,error,] = useSignInWithEmailAndPassword(auth);
-
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const handleSubmit = event => {
     event.preventDefault();
     const email = emailRef.current.value;
@@ -21,7 +21,7 @@ const Login = () => {
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col">
-        <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-100">
+        <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-100 p-6">
           <h1 className='text-4xl font-bold text-center p-6'>Login</h1>
           
           <form onSubmit={handleSubmit} class="card-body">
@@ -47,6 +47,10 @@ const Login = () => {
             </div>
           </form>
 
+          <div class="divider">OR</div>
+
+          <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue with Google</button>
+          
         </div>
       </div>
     </div>
