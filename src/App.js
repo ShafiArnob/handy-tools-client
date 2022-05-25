@@ -6,6 +6,7 @@ import Dashboard from './Pages/Dashboard/Dashboard'
 import Blogs from './Pages/Blogs/Blogs'
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio'
 import Login from './Pages/Login/Login'
+import Signup from './Pages/Signup/Signup'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
       </Routes>
     </div>
   );
