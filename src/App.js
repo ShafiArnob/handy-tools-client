@@ -7,6 +7,7 @@ import Blogs from './Pages/Blogs/Blogs'
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio'
 import Login from './Pages/Login/Login'
 import Signup from './Pages/Signup/Signup'
+import PurchasePage from './Pages/PurchasePage/PurchasePage';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+
+        <Route path='/products/:id' element={<PurchasePage></PurchasePage>}></Route>
       </Routes>
     </div>
   );

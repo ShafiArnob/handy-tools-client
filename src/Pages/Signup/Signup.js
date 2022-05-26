@@ -19,7 +19,6 @@ const Signup = () => {
   const [token]  = useToken(user || gUser);
 
   if(token) {
-    console.log(token);
     navigate('/');
   }
   const handleRegister = async (event) => {

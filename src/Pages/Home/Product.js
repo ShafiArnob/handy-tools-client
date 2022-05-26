@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Product = (props) => {
-  const {name,img,description,quantity, minQuantity} = props.product
-  console.log(props.product);
+  const {name,img,description,quantity, minQuantity,_id} = props.product
+  const navigate = useNavigate()
+  
+  const buyNow = (id) =>{
+    const path = `/products/${id}`
+    navigate(path)
+  } 
   return (
   <div class="card w-96 bg-base-100 shadow-xl">
     <figure class="px-10 pt-10">
@@ -14,7 +20,7 @@ const Product = (props) => {
       <p>Available: {quantity}</p>
       <p>Minimum Quantity: {minQuantity}</p>
       <div class="card-actions flex justify-center py-6">
-        <button class="btn btn-primary w-80 text-white font-bold">Buy Now</button>
+        <button class="btn btn-primary w-80 text-white font-bold" onClick={()=>buyNow(_id)}>Buy Now</button>
       </div>
     </div>
   </div>
