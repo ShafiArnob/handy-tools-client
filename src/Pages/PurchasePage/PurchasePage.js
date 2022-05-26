@@ -41,7 +41,7 @@ const PurchasePage = () => {
     const qty = parseInt(e.target.value)
 
     if(qty){
-      if(parseInt(product.minQuantity)>qty){
+      if(parseInt(product.minQuantity)>qty || parseInt(product.quantity)<qty){
         setInputDisabled(false)
       }
       else{
@@ -52,6 +52,7 @@ const PurchasePage = () => {
       setInputDisabled(false)
     }
   }
+
   return (
     <div class="hero min-h-screen bg-base-200 flex flex-row">
       <div class="hero-content flex lg:flex-row p-12 my-6 bg-white rounded-lg m-10">
