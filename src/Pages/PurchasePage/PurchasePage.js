@@ -23,7 +23,7 @@ const PurchasePage = () => {
     const productName = product.name
     const productId = product._id
     const quantity = e.target.quantity.value
-    const paymentStatus = true
+    const paymentStatus = false
 
     const body = {name,email,address,phone,productName,productId,quantity,paymentStatus}
 
