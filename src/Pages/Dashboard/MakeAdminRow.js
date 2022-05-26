@@ -13,7 +13,7 @@ const MakeAdminRow = ({user,refetch}) => {
     <tr className='text-center'>
             <td>{user.email}</td>
             <td>{user?.role? user.role : ''}</td>
-            <td><button onClick={makeAdmin} class="btn btn-outline">Make Admin</button></td>
+            <td>{user?.role=="admin"? "" : <button onClick={makeAdmin} class="btn btn-outline">Make Admin</button>}</td>
     </tr>
   );
 };
