@@ -2,7 +2,16 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Shared/Header';
 import Home from './Pages/Home/Home'
+
 import Dashboard from './Pages/Dashboard/Dashboard'
+import MyProfile from './Pages/Dashboard/MyProfile'
+import AddReview from './Pages/Dashboard/AddReview'
+import MyOrder from './Pages/Dashboard/MyOrder'
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders'
+import AddProduct from './Pages/Dashboard/AddProduct'
+import MakeAdmin from './Pages/Dashboard/MakeAdmin'
+import ManageProducts from './Pages/Dashboard/ManageProducts'
+
 import Blogs from './Pages/Blogs/Blogs'
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio'
 import Login from './Pages/Login/Login'
@@ -16,7 +25,17 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
+
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='myorders' element={<MyOrder></MyOrder>}></Route>
+          <Route path='manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>
+        </Route>
+        
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
