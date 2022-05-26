@@ -10,7 +10,7 @@ const Login = () => {
   const [signInWithEmailAndPassword,user,loading,error,] = useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-  console.log(aUser);
+  
 
   const handleSubmit = event => {
     event.preventDefault();
