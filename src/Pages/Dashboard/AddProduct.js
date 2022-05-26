@@ -1,19 +1,32 @@
 import React from 'react';
 
 const AddProduct = () => {
+
+  const handleAddProduct = e =>{
+    e.preventDefault()
+    const name = e.target.name.value
+    const link = e.target.link.value
+    const description = e.target.des.value
+    const price = e.target.price.value
+    const quantity = (e.target.quantity.value).toString(10)
+    const minQuantity = (e.target.minQuantity.value).toString(10)
+
+    console.log(name,link,description,price,quantity,minQuantity);
+  }
+
   return (
     <div class="card w-1/2 flex flex-col items-center bg-base-100  p-4">
-      <div class="card-body flex flex-col items-center w-full outline outline-1 outline-primary rounded-2xl">
+      <form onSubmit={handleAddProduct} class="card-body flex flex-col items-center w-full outline outline-1 outline-primary rounded-2xl">
         <h2 class="text-4xl text-center text-primary p-2">Add Product</h2>
-        <input type="text" placeholder="Product Name" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" placeholder="Image Link" class="input input-bordered w-full max-w-xs  my-2" />
-        <input type="text" placeholder="Product Description" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" placeholder="Price" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" placeholder="Quantity" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" placeholder="Minimum Quantity" class="input input-bordered w-full max-w-xs my-2" />
+        <input type="text" name='name' placeholder="Product Name" class="input input-bordered w-full max-w-xs my-2" />
+        <input type="text" name='link' placeholder="Image Link" class="input input-bordered w-full max-w-xs  my-2" />
+        <textarea type="text" name='des' placeholder="Product Description" class="input input-bordered w-full max-w-xs my-2" />
+        <input type="text" name='price' placeholder="Price" class="input input-bordered w-full max-w-xs my-2" />
+        <input type="number" name='quantity' placeholder="Quantity" class="input input-bordered w-full max-w-xs my-2" />
+        <input type="number" name='minQuantity' placeholder="Minimum Quantity" class="input input-bordered w-full max-w-xs my-2" />
 
-        <button class="btn btn-outline btn-primary w-full">Success</button>
-      </div>
+        <button type='submit' class="btn btn-outline btn-primary w-full">Add Product</button>
+      </form>
     </div>
   );
 };
