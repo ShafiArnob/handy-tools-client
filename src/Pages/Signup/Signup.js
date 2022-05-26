@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.config';
 import useToken from '../../hooks/useToken';
+import Loading from '../../Shared/Loading'
 const Signup = () => {
   const emailRef = useRef('')
   const passwordRef = useRef('')
@@ -20,6 +21,13 @@ const Signup = () => {
 
   if(token) {
     navigate('/');
+  }
+  if(loading){
+    return <Loading></Loading>
+  }
+  let signInError
+  if(error || gError){
+    signInError = <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
   }
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -61,7 +69,7 @@ const Signup = () => {
               <input ref={passwordRef} type="password" placeholder="password" class="input input-bordered" /> 
             </div>
 
-            
+            {signInError}         
 
             <div>
               <p>Already have account <Link className='text-blue-700 underline' to='/login'>Login</Link> now</p>

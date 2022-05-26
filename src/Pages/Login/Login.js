@@ -1,16 +1,26 @@
 import React, { useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.config';
+import useToken from '../../hooks/useToken';
 const Login = () => {
+  // const [auser] = useAuthState(auth)
   const emailRef = useRef('');
   const passwordRef = useRef('');
   const navigate = useNavigate();
-  const [aUser] = useAuthState(auth);
   const [signInWithEmailAndPassword,user,loading,error,] = useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  let signInError
+  const [token] = useToken(user || gUser);
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
-  
+    useEffect( () =>{
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -18,9 +28,16 @@ const Login = () => {
     const password = passwordRef.current.value;
 
     signInWithEmailAndPassword(email, password);
-    navigate('/')
+    
   }
 
+  if(loading){
+    return <Loading></Loading>
+  }
+  if(error || gError){
+    signInError = <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
+  }
+  
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col">
@@ -40,7 +57,7 @@ const Login = () => {
                 <span class="label-text">Password</span>
               </label>
               <input ref={passwordRef} type="password" placeholder="password" class="input input-bordered" />
-              
+              {signInError}
             </div>
             <div>
               <p>Dont have any account <Link className='text-blue-700 underline' to='/signup'>Signup</Link> now</p>
