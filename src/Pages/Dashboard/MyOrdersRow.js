@@ -3,7 +3,7 @@ import React from 'react';
 const MyOrdersRow = ({order}) => {
   
   return (
-    <tr>
+    <tr className='text-center'>
             <td>{order.productName}</td>
             <td>{order.quantity}</td>
             <td>Blue</td>

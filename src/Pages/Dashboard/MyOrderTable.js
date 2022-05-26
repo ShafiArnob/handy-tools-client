@@ -12,15 +12,13 @@ const MyOrderTable = ({email}) => {
       .then(data=>setOrders(data))
   },[])
       
-   
-  
   // console.log(orders);
   return (
     <div class="overflow-x-auto w-full m-6">
       <table class="table w-2/3 ">
         {/* <!-- head --> */}
         <thead>
-          <tr>
+          <tr className='text-center'>
             <th>Product Name</th>
             <th>Quantity</th>
             <th>Action</th>
