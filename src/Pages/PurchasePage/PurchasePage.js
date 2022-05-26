@@ -25,7 +25,16 @@ const PurchasePage = () => {
     const quantity = e.target.quantity.value
     const paymentStatus = true
 
-    url = 
+    const body = {name,email,address,phone,productName,productId,quantity,paymentStatus}
+
+    const url = "http://localhost:5000/orders"
+    fetch(url,{
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify(body)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
   }
   
   function qty(e){

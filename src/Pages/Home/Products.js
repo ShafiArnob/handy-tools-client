@@ -11,7 +11,7 @@ const Products = () => {
   },[])
   return (
     <div className='p-10'>
-      <h1>Products</h1>
+      <h1 className='text-center text-6xl p-10 text-primary font-semibold'>Products</h1>
       {/* <h1>{products.length}</h1> */}
       <div className="flex justify-center gap-10">
         {
