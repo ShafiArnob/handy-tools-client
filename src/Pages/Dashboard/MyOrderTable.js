@@ -4,13 +4,14 @@ import Loading from '../../Shared/Loading';
 import MyOrdersRow from './MyOrdersRow';
 
 const MyOrderTable = ({email}) => {
+  const [reloadOrderTable, setReloadOrderTable] = useState(false)
   const [orders, setOrders] = useState([])
   console.log(email);
   useEffect(()=>{
     fetch(`http://localhost:5000/orders/${email}`)
       .then(res=>res.json())
       .then(data=>setOrders(data))
-  },[])
+  },[reloadOrderTable, email])
       
   // console.log(orders);
   return (
@@ -27,7 +28,7 @@ const MyOrderTable = ({email}) => {
         <tbody>
           {/* <!-- row 1 --> */}
           {
-            orders?.map(order => <MyOrdersRow key={order._id} order={order}></MyOrdersRow>)
+            orders?.map(order => <MyOrdersRow key={order._id} order={order} setReloadOrderTable={setReloadOrderTable} reloadOrderTable={reloadOrderTable}></MyOrdersRow>)
           }
         </tbody>
       </table>
