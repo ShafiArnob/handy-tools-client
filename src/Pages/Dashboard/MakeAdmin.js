@@ -12,7 +12,8 @@ const MakeAdmin = () => {
         return <Loading></Loading>
     }
   return (
-    <div class="overflow-x-auto w-full m-6">
+    <div className="w-full flex items-center justify-center">
+      <div class="flex items-center justify-center  overflow-x-auto w-full m-6">
       <table class="table w-2/3 ">
         {/* <!-- head --> */}
         <thead>
@@ -30,6 +31,7 @@ const MakeAdmin = () => {
           }
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

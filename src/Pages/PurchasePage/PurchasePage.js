@@ -23,9 +23,10 @@ const PurchasePage = () => {
     const productName = product.name
     const productId = product._id
     const quantity = e.target.quantity.value
+    const status = "pending"
     const paymentStatus = false
 
-    const body = {name,email,address,phone,productName,productId,quantity,paymentStatus}
+    const body = {name,email,address,phone,productName,productId,quantity,status,paymentStatus}
 
     const url = "http://localhost:5000/orders"
     fetch(url,{
