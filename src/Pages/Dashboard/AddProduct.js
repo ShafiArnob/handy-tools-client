@@ -11,7 +11,16 @@ const AddProduct = () => {
     const quantity = (e.target.quantity.value).toString(10)
     const minQuantity = (e.target.minQuantity.value).toString(10)
 
-    console.log(name,link,description,price,quantity,minQuantity);
+    const body = {name:name, img:link, description:description,price:price, quantity:quantity, minQuantity:minQuantity}
+    
+    const url = "http://localhost:5000/products"
+    fetch(url,{
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify(body)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
   }
 
   return (
