@@ -12,7 +12,7 @@ const AddReview = () => {
 
   const onSubmit = data => {
     const email = user?.email
-    const body = {review:data.review, rating:data.rating, email:email}
+    const body = {review:data.review, rating:data.rating, email:email,name:user.displayName}
     if(email){
       fetch(`http://localhost:5000/reviews/${email}`, {
           method:'PUT',
