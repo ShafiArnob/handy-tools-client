@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 const ManageAllOrders = () => {
+  const [orders, setOrders] = useState([])
+  useEffect(()=>{
+    fetch(`http://localhost:5000/orders`)
+      .then(res=>res.json())
+      .then(data=>setOrders(data))
+  },[])
+  
   return (
-    <div>
-      Manage All Orders
-    </div>
+    <div class="overflow-x-auto mt-4 w-2/3">
+  <table class="table table-compact w-full">
+    <thead className='text-center'>
+      <tr>
+        <th>Order Id</th> 
+        <th>User Name</th> 
+        <th>Email</th> 
+        <th>Quantity</th> 
+        <th>Address</th> 
+        <th>Action</th>
+      </tr>
+    </thead> 
+    <tbody>
+      {
+        orders.map(order=><ManageAllOrdersRow key={order._id} order={order}></ManageAllOrdersRow>)
+      }
+    </tbody> 
+  </table>
+</div>
   );
 };
 

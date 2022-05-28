@@ -12,7 +12,7 @@ const MyOrderTable = ({email}) => {
       .then(res=>res.json())
       .then(data=>setOrders(data))
   },[reloadOrderTable, email])
-      
+  
   // console.log(orders);
   return (
     <div class="overflow-x-auto w-full m-6">
