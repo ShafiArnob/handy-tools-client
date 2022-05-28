@@ -11,7 +11,7 @@ const Reviews = () => {
   return (
     <>
     <h1 className='text-center text-6xl p-10 text-primary font-semibold'>Reviews</h1>
-    <div className='grid grid-cols-4  gap-x-44 bg-green-100 w-100 p-10'>
+    <div className='grid grid-cols-3  gap-x-44 bg-green-100 w-100 p-10'>
 
       {
         reviews.map(review => <ReviewCard key={review._id} review={review}></ReviewCard>)

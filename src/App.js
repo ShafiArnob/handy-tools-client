@@ -18,6 +18,7 @@ import Login from './Pages/Login/Login'
 import Signup from './Pages/Signup/Signup'
 import PurchasePage from './Pages/PurchasePage/PurchasePage';
 import RequireAuth from './Shared/RequireAuth';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-
+        <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>
