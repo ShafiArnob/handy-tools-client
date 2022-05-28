@@ -12,8 +12,8 @@ const MakeAdmin = () => {
     }
   return (
     <div className="w-full flex items-center justify-center">
-      <div class="flex items-center justify-center  overflow-x-auto w-full m-6">
-      <table class="table w-2/3 ">
+      <div className="flex items-center justify-center  overflow-x-auto w-full m-6">
+      <table className="table w-2/3 ">
         {/* <!-- head --> */}
         <thead>
           <tr className='text-center'>

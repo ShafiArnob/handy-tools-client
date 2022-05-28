@@ -47,17 +47,17 @@ const MyProfile = () => {
 
   }
   return (
-    <div class="card w-1/2 flex flex-col items-center bg-base-100  p-4">
-      <form onSubmit={handleUpdateProfile} class="card-body flex flex-col items-center w-full outline outline-1 outline-primary rounded-2xl">
-        <h2 class="text-4xl text-center text-primary p-2">Profile</h2>
-        <input  type="text" name='name' defaultValue = {user?.displayName} class="input input-bordered w-full max-w-xs my-2" disabled/>
-        <input type="text" name='email' defaultValue = {user?.email} class="input input-bordered w-full max-w-xs  my-2" disabled/>
-        <input defaultValue={profile.education} type="text" name='education' placeholder="Education" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" name='phone' defaultValue={profile.phone} placeholder="Phone Number" class="input input-bordered w-full max-w-xs my-2" />
-        <textarea type="text" name='address' defaultValue={profile.address} placeholder="Address" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" name='linkedin' defaultValue={profile.linkedin} placeholder="Linkedin Profile" class="input input-bordered w-full max-w-xs my-2" />
+    <div className="card w-1/2 flex flex-col items-center bg-base-100  p-4">
+      <form onSubmit={handleUpdateProfile} className="card-body flex flex-col items-center w-full outline outline-1 outline-primary rounded-2xl">
+        <h2 className="text-4xl text-center text-primary p-2">Profile</h2>
+        <input  type="text" name='name' defaultValue = {user?.displayName} className="input input-bordered w-full max-w-xs my-2" disabled/>
+        <input type="text" name='email' defaultValue = {user?.email} className="input input-bordered w-full max-w-xs  my-2" disabled/>
+        <input defaultValue={profile.education} type="text" name='education' placeholder="Education" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="text" name='phone' defaultValue={profile.phone} placeholder="Phone Number" className="input input-bordered w-full max-w-xs my-2" />
+        <textarea type="text" name='address' defaultValue={profile.address} placeholder="Address" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="text" name='linkedin' defaultValue={profile.linkedin} placeholder="Linkedin Profile" className="input input-bordered w-full max-w-xs my-2" />
 
-        <button type='submit' class="btn btn-outline btn-primary w-1/3">Update</button>
+        <button type='submit' className="btn btn-outline btn-primary w-1/3">Update</button>
       </form>
     </div>
   );

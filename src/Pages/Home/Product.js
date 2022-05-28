@@ -10,18 +10,18 @@ const Product = (props) => {
     navigate(path)
   } 
   return (
-  <div class="card w-96 bg-base-100 shadow-xl">
-    <figure class="px-10 pt-10">
-      <img src={img} class="rounded-xl"/>
+  <div className="card w-96 bg-base-100 shadow-xl">
+    <figure className="px-10 pt-10">
+      <img src={img} className="rounded-xl"/>
     </figure>
-    <div class="card-body">
-      <h2 class="text-2xl">Name: {name}</h2>
-      <h2 class="text-xl">Price: {price}</h2>
+    <div className="card-body">
+      <h2 className="text-2xl">Name: {name}</h2>
+      <h2 className="text-xl">Price: {price}</h2>
       <p className='text-xs'>Description: {description.slice(0,180)}</p>
       <p>Available: {quantity}</p>
       <p>Minimum Quantity: {minQuantity}</p>
-      <div class="card-actions flex justify-center py-6">
-        <button class="btn btn-primary w-80 text-white font-bold" onClick={()=>buyNow(_id)}>Buy Now</button>
+      <div className="card-actions flex justify-center py-6">
+        <button className="btn btn-primary w-80 text-white font-bold" onClick={()=>buyNow(_id)}>Buy Now</button>
       </div>
     </div>
   </div>

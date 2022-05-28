@@ -24,17 +24,17 @@ const AddProduct = () => {
   }
 
   return (
-    <div class="card w-1/2 flex flex-col items-center bg-base-100  p-4">
-      <form onSubmit={handleAddProduct} class="card-body flex flex-col items-center w-full outline outline-1 outline-primary rounded-2xl">
-        <h2 class="text-4xl text-center text-primary p-2">Add Product</h2>
-        <input type="text" name='name' placeholder="Product Name" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" name='link' placeholder="Image Link" class="input input-bordered w-full max-w-xs  my-2" />
-        <textarea type="text" name='des' placeholder="Product Description" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="text" name='price' placeholder="Price" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="number" name='quantity' placeholder="Quantity" class="input input-bordered w-full max-w-xs my-2" />
-        <input type="number" name='minQuantity' placeholder="Minimum Quantity" class="input input-bordered w-full max-w-xs my-2" />
+    <div className="card w-1/2 flex flex-col items-center bg-base-100  p-4">
+      <form onSubmit={handleAddProduct} className="card-body flex flex-col items-center w-full outline outline-1 outline-primary rounded-2xl">
+        <h2 className="text-4xl text-center text-primary p-2">Add Product</h2>
+        <input type="text" name='name' placeholder="Product Name" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="text" name='link' placeholder="Image Link" className="input input-bordered w-full max-w-xs  my-2" />
+        <textarea type="text" name='des' placeholder="Product Description" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="text" name='price' placeholder="Price" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="number" name='quantity' placeholder="Quantity" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="number" name='minQuantity' placeholder="Minimum Quantity" className="input input-bordered w-full max-w-xs my-2" />
 
-        <button type='submit' class="btn btn-outline btn-primary w-full">Add Product</button>
+        <button type='submit' className="btn btn-outline btn-primary w-full">Add Product</button>
       </form>
     </div>
   );

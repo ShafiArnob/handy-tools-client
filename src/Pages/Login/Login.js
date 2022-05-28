@@ -39,35 +39,35 @@ const Login = () => {
   }
   
   return (
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content flex-col">
-        <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-100 p-6">
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col">
+        <div className="card flex-shrink-0 w-96 shadow-2xl bg-base-100 p-6">
           <h1 className='text-4xl font-bold text-center p-6'>Login</h1>
           
-          <form onSubmit={handleSubmit} class="card-body">
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Email</span>
+          <form onSubmit={handleSubmit} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
-              <input ref={emailRef} type="text" placeholder="email" class="input input-bordered" />
+              <input ref={emailRef} type="text" placeholder="email" className="input input-bordered" />
             </div>
 
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Password</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
               </label>
-              <input ref={passwordRef} type="password" placeholder="password" class="input input-bordered" />
+              <input ref={passwordRef} type="password" placeholder="password" className="input input-bordered" />
               {signInError}
             </div>
             <div>
               <p>Dont have any account <Link className='text-blue-700 underline' to='/signup'>Signup</Link> now</p>
             </div>
-            <div class="form-control mt-6">
-              <button type='submit' class="btn btn-primary text-white font-bold">Login</button>
+            <div className="form-control mt-6">
+              <button type='submit' className="btn btn-primary text-white font-bold">Login</button>
             </div>
           </form>
 
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
 
           <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue with Google</button>
           

@@ -41,32 +41,32 @@ const Signup = () => {
   }
 
   return (
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content flex-col">
-        <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-100 p-6">
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col">
+        <div className="card flex-shrink-0 w-96 shadow-2xl bg-base-100 p-6">
           <h1 className='text-4xl font-bold text-center p-6'>Signup</h1>
           
-          <form onSubmit={handleRegister} class="card-body">
+          <form onSubmit={handleRegister} className="card-body">
 
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Name</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
               </label>
-              <input ref={nameRef} type="text" placeholder="Name" class="input input-bordered" /> 
+              <input ref={nameRef} type="text" placeholder="Name" className="input input-bordered" /> 
             </div>
 
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Email</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
-              <input ref={emailRef} type="email" placeholder="Email" class="input input-bordered" />
+              <input ref={emailRef} type="email" placeholder="Email" className="input input-bordered" />
             </div>
 
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Password</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
               </label>
-              <input ref={passwordRef} type="password" placeholder="password" class="input input-bordered" /> 
+              <input ref={passwordRef} type="password" placeholder="password" className="input input-bordered" /> 
             </div>
 
             {signInError}         
@@ -75,13 +75,13 @@ const Signup = () => {
               <p>Already have account <Link className='text-blue-700 underline' to='/login'>Login</Link> now</p>
             </div>
 
-            <div class="form-control mt-6">
-              <button type='submit' class="btn btn-primary text-white font-bold">Sign up</button>
+            <div className="form-control mt-6">
+              <button type='submit' className="btn btn-primary text-white font-bold">Sign up</button>
             </div>
 
           </form>
 
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
 
           <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue with Google</button>
         </div>

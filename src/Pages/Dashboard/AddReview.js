@@ -27,7 +27,7 @@ const AddReview = () => {
   }
 
   return (
-    <div class="card w-1/2 flex flex-col items-center bg-base-100  p-4">
+    <div className="card w-1/2 flex flex-col items-center bg-base-100  p-4">
       <form className='card-body flex flex-col items-center w-full outline outline-1 outline-primary rounded-2xl' onSubmit={handleSubmit(onSubmit)}>
         <input className='input input-bordered w-full max-w-xs my-2' placeholder='Review'{...register("review", { required: true})} />
         {errors.review?.type === 'required' && <p className='text-red-600 text-xs text-left'>Review is required</p>}
@@ -38,7 +38,7 @@ const AddReview = () => {
           })} />
         {errors.rating?.type === "max" && <p className='text-red-600 text-xs text-left'>Maximum Value is 5</p>}
         {errors.rating?.type === "min" && <p className='text-red-600 text-xs text-left'>Minimum Value is 5</p>}
-        <button type='submit' class="btn btn-outline btn-primary w-1/3">Add Review</button>
+        <button type='submit' className="btn btn-outline btn-primary w-1/3">Add Review</button>
       </form>
       </div>
 

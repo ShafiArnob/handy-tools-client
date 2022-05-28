@@ -22,7 +22,7 @@ const ManageProductsRow = ({product,refetch}) => {
         <td>{product.price}</td> 
         <td>{product.quantity}</td> 
         <td>{product.minQuantity}</td> 
-        <td><button onClick={handleProductDelete} class="btn btn-sm btn-outline btn-error">x</button></td> 
+        <td><button onClick={handleProductDelete} className="btn btn-sm btn-outline btn-error">x</button></td> 
       </tr>
   );
 };

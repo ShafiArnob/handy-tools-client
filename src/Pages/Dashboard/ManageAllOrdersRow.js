@@ -1,7 +1,19 @@
 import React from 'react';
-
+import { useNavigate } from "react-router-dom";
 const ManageAllOrdersRow = ({order}) => {
-  
+  let navigate = useNavigate()
+  const handleOrderDelete = ()=>{
+    const proceed = window.confirm("Are You Sure?")
+    if(proceed){
+      const url = `http://localhost:5000/orders/${order._id}`
+      fetch(url,{
+        method:'DELETE',
+        headers:{'content-type':'application/json'}})
+      .then(res => res.json())
+      .then(data => console.log(data))
+    }
+    // navigate('manageallorders')
+  }
   return (
       <tr className='text-center'>
             <td>{order._id}</td>
@@ -10,7 +22,7 @@ const ManageAllOrdersRow = ({order}) => {
             <td>{order.quantity}</td>
             <td>{order.address}</td>
             
-            <td><button class="btn btn-sm btn-outline btn-error">shipped</button></td>
+            <td><button onClick={handleOrderDelete} className="btn btn-sm btn-outline btn-error">shipped</button></td>
     </tr>
 
   );

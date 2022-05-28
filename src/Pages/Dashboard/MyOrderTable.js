@@ -15,8 +15,8 @@ const MyOrderTable = ({email}) => {
   
   // console.log(orders);
   return (
-    <div class="overflow-x-auto w-full m-6">
-      <table class="table w-2/3 ">
+    <div className="overflow-x-auto w-full m-6">
+      <table className="table w-2/3 ">
         {/* <!-- head --> */}
         <thead>
           <tr className='text-center'>

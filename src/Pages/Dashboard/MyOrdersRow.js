@@ -17,7 +17,7 @@ const MyOrdersRow = ({order,setReloadOrderTable,reloadOrderTable}) => {
     <tr className='text-center'>
             <td>{order.productName}</td>
             <td>{order.quantity}</td>
-            <td><button onClick={handleOrderDelete} class="btn btn-sm btn-outline btn-error">x</button></td>
+            <td><button onClick={handleOrderDelete} className="btn btn-sm btn-outline btn-error">x</button></td>
     </tr>
   );
 };
