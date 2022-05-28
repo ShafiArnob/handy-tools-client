@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import auth from '../../firebase.config';
+import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading'
 import { useForm } from "react-hook-form";
