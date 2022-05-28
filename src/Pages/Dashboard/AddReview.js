@@ -14,7 +14,7 @@ const AddReview = () => {
     const email = user?.email
     const body = {review:data.review, rating:data.rating, email:email}
     if(email){
-      fetch(`http://localhost:5000/review/${email}`, {
+      fetch(`http://localhost:5000/reviews/${email}`, {
           method:'PUT',
           headers: {
               'content-type': 'application/json'
