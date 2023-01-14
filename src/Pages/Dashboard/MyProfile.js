@@ -13,7 +13,7 @@ const MyProfile = () => {
   const onSubmit = data => console.log(data)
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/profile/${user?.email}`)
+    fetch(`https://mighty-spire-45637.herokuapp.com/profile/${user?.email}`)
     .then(res => res.json())
     .then(data => setProfile(data))
   },[user])
@@ -34,7 +34,7 @@ const MyProfile = () => {
     const body = {name,email,education,phone, address,linkedin}
 
     if(email){
-      fetch(`http://localhost:5000/profile/${email}`, {
+      fetch(`https://mighty-spire-45637.herokuapp.com/profile/${email}`, {
           method:'PUT',
           headers: {
               'content-type': 'application/json'

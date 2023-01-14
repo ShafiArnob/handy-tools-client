@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.config';
+import auth from '../../firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading'
 const Signup = () => {

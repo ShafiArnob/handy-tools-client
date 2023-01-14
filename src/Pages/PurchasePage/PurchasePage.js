@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
-import auth from '../../firebase.config';
+import auth from '../../firebase.init';
 
 const PurchasePage = () => {
   const {id} = useParams()
@@ -9,7 +9,7 @@ const PurchasePage = () => {
   const [inputDisabled, setInputDisabled] = useState(true)
   const [user] = useAuthState(auth);
   useEffect(()=>{
-    const url = `http://localhost:5000/products/${id}`
+    const url = `https://mighty-spire-45637.herokuapp.com/products/${id}`
     fetch(url).then(res=>res.json()).then(data=>setProduct(data))
   },[])
 
@@ -28,7 +28,7 @@ const PurchasePage = () => {
 
     const body = {name,email,address,phone,productName,productId,quantity,status,paymentStatus}
 
-    const url = "http://localhost:5000/orders"
+    const url = "https://mighty-spire-45637.herokuapp.com/orders"
     fetch(url,{
       method:'POST',
       headers:{'content-type':'application/json'},

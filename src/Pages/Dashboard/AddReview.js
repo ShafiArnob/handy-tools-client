@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import auth from '../../firebase.config';
+import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
 const AddReview = () => {
   const { register, handleSubmit,formState:{errors} } = useForm();
@@ -14,7 +14,7 @@ const AddReview = () => {
     const email = user?.email
     const body = {review:data.review, rating:data.rating, email:email,name:user.displayName}
     if(email){
-      fetch(`http://localhost:5000/reviews/${email}`, {
+      fetch(`https://mighty-spire-45637.herokuapp.com/reviews/${email}`, {
           method:'PUT',
           headers: {
               'content-type': 'application/json'

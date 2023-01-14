@@ -6,7 +6,7 @@ const ManageProductsRow = ({product,refetch}) => {
   const handleProductDelete = ()=>{
       const proceed = window.confirm("Are You Sure?")
       if(proceed){
-        const url = `http://localhost:5000/products/${product._id}`
+        const url = `https://mighty-spire-45637.herokuapp.com/products/${product._id}`
         fetch(url,{
           method:'DELETE',
           headers:{'content-type':'application/json'}})

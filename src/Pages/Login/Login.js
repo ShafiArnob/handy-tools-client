@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Loading from '../../Shared/Loading'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.config';
+import auth from '../../firebase.init';
 import useToken from '../../hooks/useToken';
 const Login = () => {
   // const [auser] = useAuthState(auth)
