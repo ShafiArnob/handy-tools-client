@@ -8,7 +8,7 @@ const MyOrderTable = ({email}) => {
   const [orders, setOrders] = useState([])
   console.log(email);
   useEffect(()=>{
-    fetch(`https://mighty-spire-45637.herokuapp.com/orders/${email}`)
+    fetch(`http://localhost:5000/orders/${email}`)
       .then(res=>res.json())
       .then(data=>setOrders(data))
   },[reloadOrderTable, email])

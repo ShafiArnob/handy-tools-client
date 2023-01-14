@@ -4,7 +4,7 @@ import MakeAdminRow from "./MakeAdminRow";
 
 const MakeAdmin = () => {
   const { data:users, isLoading, refetch } = useQuery(
-    'users', () => fetch('https://mighty-spire-45637.herokuapp.com/user')
+    'users', () => fetch('http://localhost:5000/user')
     .then(res => res.json()));
     
     if (isLoading) {

@@ -2,7 +2,7 @@ import React from 'react';
 
 const MakeAdminRow = ({user,refetch}) => {
   const makeAdmin = () => {
-    fetch(`https://mighty-spire-45637.herokuapp.com/user/admin/${user.email}`, {
+    fetch(`http://localhost:5000/user/admin/${user.email}`, {
         method: 'PUT'
     })
     .then(res => res.json())

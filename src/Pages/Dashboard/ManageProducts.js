@@ -6,13 +6,13 @@ const ManageProducts = () => {
   // const [products, setProducts] = useState([])
 
   // useEffect(()=>{
-  //   fetch('https://mighty-spire-45637.herokuapp.com/products')
+  //   fetch('http://localhost:5000/products')
   //   .then(res => res.json())
   //   .then(data => setProducts(data))
   // },[])
 
   const { data:products, isLoading, refetch } = useQuery(
-    'products', () => fetch('https://mighty-spire-45637.herokuapp.com/products')
+    'products', () => fetch('http://localhost:5000/products')
     .then(res => res.json()));
     
     if (isLoading) {

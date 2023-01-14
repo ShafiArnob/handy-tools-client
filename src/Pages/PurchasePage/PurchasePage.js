@@ -9,7 +9,7 @@ const PurchasePage = () => {
   const [inputDisabled, setInputDisabled] = useState(true)
   const [user] = useAuthState(auth);
   useEffect(()=>{
-    const url = `https://mighty-spire-45637.herokuapp.com/products/${id}`
+    const url = `http://localhost:5000/products/${id}`
     fetch(url).then(res=>res.json()).then(data=>setProduct(data))
   },[])
 
@@ -28,7 +28,7 @@ const PurchasePage = () => {
 
     const body = {name,email,address,phone,productName,productId,quantity,status,paymentStatus}
 
-    const url = "https://mighty-spire-45637.herokuapp.com/orders"
+    const url = "http://localhost:5000/orders"
     fetch(url,{
       method:'POST',
       headers:{'content-type':'application/json'},
