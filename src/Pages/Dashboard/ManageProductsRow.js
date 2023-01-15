@@ -20,8 +20,8 @@ const ManageProductsRow = ({product,refetch}) => {
     <tr className='text-center'>
         <td>{product.name}</td> 
         <td>{product.price}</td> 
-        <td>{product.quantity}</td> 
-        <td>{product.minQuantity}</td> 
+        <td>{product.availableQuantity}</td> 
+        <td>{product.minimumQuantity}</td> 
         <td><button onClick={handleProductDelete} className="btn btn-sm btn-outline btn-error">x</button></td> 
       </tr>
   );

@@ -16,7 +16,7 @@ const MyOrdersRow = ({order,setReloadOrderTable,reloadOrderTable}) => {
   return (
     <tr className='text-center'>
             <td>{order.productName}</td>
-            <td>{order.quantity}</td>
+            <td>{order.availableQuantity}</td>
             <td><button onClick={handleOrderDelete} className="btn btn-sm btn-outline btn-error">x</button></td>
     </tr>
   );

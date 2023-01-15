@@ -8,10 +8,10 @@ const AddProduct = () => {
     const link = e.target.link.value
     const description = e.target.des.value
     const price = e.target.price.value
-    const quantity = (e.target.quantity.value).toString(10)
-    const minQuantity = (e.target.minQuantity.value).toString(10)
+    const availableQuantity = (e.target.availableQuantity.value).toString(10)
+    const minimumQuantity = (e.target.minimumQuantity.value).toString(10)
 
-    const body = {name:name, img:link, description:description,price:price, quantity:quantity, minQuantity:minQuantity}
+    const body = {name:name, img:link, description:description,price:price, availableQuantity:availableQuantity, minimumQuantity:minimumQuantity}
     
     const url = "http://localhost:5000/products"
     fetch(url,{
@@ -31,8 +31,8 @@ const AddProduct = () => {
         <input type="text" name='link' placeholder="Image Link" className="input input-bordered w-full max-w-xs  my-2" />
         <textarea type="text" name='des' placeholder="Product Description" className="input input-bordered w-full max-w-xs my-2" />
         <input type="text" name='price' placeholder="Price" className="input input-bordered w-full max-w-xs my-2" />
-        <input type="number" name='quantity' placeholder="Quantity" className="input input-bordered w-full max-w-xs my-2" />
-        <input type="number" name='minQuantity' placeholder="Minimum Quantity" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="number" name='availableQuantity' placeholder="Quantity" className="input input-bordered w-full max-w-xs my-2" />
+        <input type="number" name='minimumQuantity' placeholder="Minimum Quantity" className="input input-bordered w-full max-w-xs my-2" />
 
         <button type='submit' className="btn btn-outline btn-primary w-full">Add Product</button>
       </form>

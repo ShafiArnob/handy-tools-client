@@ -19,7 +19,7 @@ const ManageAllOrdersRow = ({order}) => {
             <td>{order._id}</td>
             <td>{order.name}</td>
             <td>{order.email}</td>
-            <td>{order.quantity}</td>
+            <td>{order.availableQuantity}</td>
             <td>{order.address}</td>
             
             <td><button onClick={handleOrderDelete} className="btn btn-sm btn-outline btn-error">shipped</button></td>

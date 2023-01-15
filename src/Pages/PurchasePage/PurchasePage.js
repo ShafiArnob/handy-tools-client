@@ -22,11 +22,11 @@ const PurchasePage = () => {
     
     const productName = product.name
     const productId = product._id
-    const quantity = e.target.quantity.value
+    const availableQuantity = e.target.availableQuantity.value
     const status = "pending"
     const paymentStatus = false
 
-    const body = {name,email,address,phone,productName,productId,quantity,status,paymentStatus}
+    const body = {name,email,address,phone,productName,productId,availableQuantity,status,paymentStatus}
 
     const url = "http://localhost:5000/orders"
     fetch(url,{
@@ -42,7 +42,7 @@ const PurchasePage = () => {
     const qty = parseInt(e.target.value)
 
     if(qty){
-      if(parseInt(product.minQuantity)>qty || parseInt(product.quantity)<qty){
+      if(parseInt(product.minimumQuantity)>qty || parseInt(product.availableQuantity)<qty){
         setInputDisabled(false)
       }
       else{
@@ -62,8 +62,8 @@ const PurchasePage = () => {
           <h1 className="text-xl font-bold">Name: {product.name}</h1>
           <h1 className="text-xl font-bold">Price: {product.price}</h1>
           <p className="py-1">{product.description}</p>
-          <p className="py-1"><span className='font-semibold'>Available:</span> {product.quantity}</p>
-          <p className="py-1"><span className='font-semibold'>Minimum Quantity:</span> {product.minQuantity}</p>
+          <p className="py-1"><span className='font-semibold'>Available:</span> {product.availableQuantity}</p>
+          <p className="py-1"><span className='font-semibold'>Minimum Quantity:</span> {product.minimumQuantity}</p>
         </div>
       </div>
       <div className="hero-content p-12 bg-white rounded-lg w-100 mb-10 m-10">
@@ -75,8 +75,8 @@ const PurchasePage = () => {
           {inputDisabled ? 
           ''
           :
-          <p className='p-0 m-0 text-xs text-red-600'>Minimum Quantity {product.minQuantity} and Maximum Quantity {product.quantity}</p>}
-          <input type="number" onChange={qty} name='quantity' placeholder="Quantity" className="input input-bordered w-full max-w-xs my-2" />
+          <p className='p-0 m-0 text-xs text-red-600'>Minimum Quantity {product.minimumQuantity} and Maximum Quantity {product.availableQuantity}</p>}
+          <input type="number" onChange={qty} name='availableQuantity' placeholder="Quantity" className="input input-bordered w-full max-w-xs my-2" />
           {
             inputDisabled? 
             <button className="btn btn-primary w-80 text-white font-bold mt-6">Place Order</button>
