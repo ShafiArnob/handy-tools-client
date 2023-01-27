@@ -4,7 +4,7 @@ import ManageAllOrdersRow from './ManageAllOrdersRow';
 const ManageAllOrders = () => {
   const [orders, setOrders] = useState([])
   useEffect(()=>{
-    fetch(`http://localhost:5000/orders`)
+    fetch(`https://tools-website-server.vercel.app/orders`)
       .then(res=>res.json())
       .then(data=>setOrders(data))
   },[])

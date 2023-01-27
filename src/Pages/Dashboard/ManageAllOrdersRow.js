@@ -5,7 +5,7 @@ const ManageAllOrdersRow = ({order}) => {
   const handleOrderDelete = ()=>{
     const proceed = window.confirm("Are You Sure?")
     if(proceed){
-      const url = `http://localhost:5000/orders/${order._id}`
+      const url = `https://tools-website-server.vercel.app/orders/${order._id}`
       fetch(url,{
         method:'DELETE',
         headers:{'content-type':'application/json'}})

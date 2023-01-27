@@ -9,7 +9,7 @@ const PurchasePage = () => {
   const [inputDisabled, setInputDisabled] = useState(true)
   const [user] = useAuthState(auth);
   useEffect(()=>{
-    const url = `http://localhost:5000/products/${id}`
+    const url = `https://tools-website-server.vercel.app/products/${id}`
     fetch(url).then(res=>res.json()).then(data=>setProduct(data))
   },[])
 
@@ -28,7 +28,7 @@ const PurchasePage = () => {
 
     const body = {name,email,address,phone,productName,productId,availableQuantity,status,paymentStatus}
 
-    const url = "http://localhost:5000/orders"
+    const url = "https://tools-website-server.vercel.app/orders"
     fetch(url,{
       method:'POST',
       headers:{'content-type':'application/json'},

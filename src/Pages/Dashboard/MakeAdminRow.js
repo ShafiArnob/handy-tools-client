@@ -2,7 +2,7 @@ import React from 'react';
 
 const MakeAdminRow = ({user,refetch}) => {
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${user.email}`, {
+    fetch(`https://tools-website-server.vercel.app/user/admin/${user.email}`, {
         method: 'PUT'
     })
     .then(res => res.json())

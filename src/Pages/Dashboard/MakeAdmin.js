@@ -4,7 +4,7 @@ import MakeAdminRow from "./MakeAdminRow";
 
 const MakeAdmin = () => {
   const { data:users, isLoading, refetch } = useQuery(
-    'users', () => fetch('http://localhost:5000/user')
+    'users', () => fetch('https://tools-website-server.vercel.app/user')
     .then(res => res.json()));
     
     if (isLoading) {

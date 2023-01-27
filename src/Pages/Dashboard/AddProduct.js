@@ -13,7 +13,7 @@ const AddProduct = () => {
 
     const body = {name:name, img:link, description:description,price:price, availableQuantity:availableQuantity, minimumQuantity:minimumQuantity}
     
-    const url = "http://localhost:5000/products"
+    const url = "https://tools-website-server.vercel.app/products"
     fetch(url,{
       method:'POST',
       headers:{'content-type':'application/json'},

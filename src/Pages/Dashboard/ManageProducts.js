@@ -6,13 +6,13 @@ const ManageProducts = () => {
   // const [products, setProducts] = useState([])
 
   // useEffect(()=>{
-  //   fetch('http://localhost:5000/products')
+  //   fetch('https://tools-website-server.vercel.app/products')
   //   .then(res => res.json())
   //   .then(data => setProducts(data))
   // },[])
 
   const { data:products, isLoading, refetch } = useQuery(
-    'products', () => fetch('http://localhost:5000/products')
+    'products', () => fetch('https://tools-website-server.vercel.app/products')
     .then(res => res.json()));
     
     if (isLoading) {

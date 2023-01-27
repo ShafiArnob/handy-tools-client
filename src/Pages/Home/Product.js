@@ -10,9 +10,9 @@ const Product = (props) => {
     navigate(path)
   } 
   return (
-  <div className="card w-96 bg-base-100 shadow-xl">
+  <div className="card w-96  bg-base-100 shadow-xl">
     <figure className="px-10 pt-10">
-      <img src={img} className="rounded-xl"/>
+      <img src={img} className="rounded-xl h-40"/>
     </figure>
     <div className="card-body">
       <h2 className="text-2xl">Name: {name}</h2>
